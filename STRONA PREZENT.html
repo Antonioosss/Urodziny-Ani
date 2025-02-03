@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy 18th Birthday Ania!</title>
+    <style>
+        body {
+            background: #000;
+            color: #ff0000;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            border: 3px solid #ff0000;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        button {
+            background: #ff0000;
+            color: black;
+            padding: 15px 30px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff3333;
+        }
+
+        .message {
+            font-size: 18px;
+            margin: 20px;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday, Ania! 🎉</h1>
+        <p class="message">Kliknij przycisk i zabieraj się do otwierania prezentu!</p>
+        <button onclick="playAudio()">LET'S GO!</button>
+        <p class="message">(Kocham Cię!)</p>
+    </div>
+
+    <!-- Niewidoczny odtwarzacz YouTube -->
+    <iframe id="ytplayer"
+        style="display:none"
+        allow="autoplay"
+        src="https://www.youtube.com/embed/Eo-KmOd3i7s?autoplay=1&mute=1&controls=0">
+    </iframe>
+
+    <script>
+        function playAudio() {
+            const iframe = document.getElementById('ytplayer');
+            // Usuwamy parametr mute aby odtworzyć dźwięk
+            iframe.src = iframe.src.replace('&mute=1', '');
+        }
+    </script>
+</body>
+</html>
